@@ -88,22 +88,30 @@ python setup.py develop
 ```
 
 ### 3. Model Training
-Running the following command to start the *first stage* of training. 
+a. Running the following command to start the *first stage* of training. 
 ```
 python -m torch.distributed.launch --nproc_per_node=2 train_StreamMOS.py --config config/StreamMOS.py --tag base
 ```
 All training records will be stored in `experiments/StreamMOS/base`. Please note that by default, validation will be conducted in each epoch after 40 epoches.                    
-Running the following command to start the *second stage* of training. At this stage, the network will learn to distinguish movable objects.
+b. Running the following command to start the *second stage* of training. At this stage, the network will learn to distinguish movable objects.
 ```
 python -m torch.distributed.launch --nproc_per_node=2 train_StreamMOS_seg.py --config config/StreamMOS_seg.py --tag base --checkpoint_path experiments/StreamMOS/base/checkpoint/{Num}-model.pth
 ```
 `Num` represents the model number with the best performance in the first stage.
 
 ### 4. Model Evaluation
-Running the following command to begin evaluating the performance of the model in the first stage.
+a. Running the following command to begin evaluating the performance of the model in the *first stage*.
 ```
-python -m torch.distributed.launch --nproc_per_node=1 val_StreamMOS.py --config config/StreamMOS.py
+python -m torch.distributed.launch --nproc_per_node=1 val_StreamMOS.py --config config/StreamMOS.py --tag base --start_val_epoch {Num} --end_val_epoch {Num+1}
 ```
+The results are saved in `experiments/StreamMOS/base/val_results`.    
+b. Running the following command to begin evaluating the performance of the model in the *second stage*.
+```
+python -m torch.distributed.launch --nproc_per_node=1 val_StreamMOS_seg.py --config config/StreamMOS_seg.py --tag base --start_val_epoch {Num} --end_val_epoch {Num+1}
+```
+The results are saved in `experiments/StreamMOS_seg/base/val_results`. 
+
+### 4. Model Evaluation
 
 ## Acknowledgement
 
