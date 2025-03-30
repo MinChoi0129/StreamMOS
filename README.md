@@ -88,12 +88,12 @@ python setup.py develop
 ```
 
 ### 3. Model Training
-Running the following command to start the first stage of training.
+**Running the following command to start the first stage of training.** 
 ```
 python -m torch.distributed.launch --nproc_per_node=2 train_StreamMOS.py --config config/StreamMOS.py --tag base
 ```
 All training records will be stored in `experiments/StreamMOS/base`.               
-Running the following command to start the second stage of training. At this stage, the network will learn to distinguish movable objects.
+**Running the following command to start the second stage of training.** At this stage, the network will learn to distinguish movable objects.
 ```
 python -m torch.distributed.launch --nproc_per_node=2 train_StreamMOS_seg.py --config config/StreamMOS_seg.py --tag base --checkpoint_path experiments/StreamMOS/base/checkpoint/{Num}-model.pth
 ```
