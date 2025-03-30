@@ -1,5 +1,7 @@
 tqdm
-pyyaml
+pyyaml==5.4.1
 scipy
 opencv-python
 tensorboardX
+pytz
+packaging
