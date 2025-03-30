@@ -6,3 +6,4 @@ tensorboardX
 pytz
 packaging
 numpy==1.22.0
+scikit-learn
