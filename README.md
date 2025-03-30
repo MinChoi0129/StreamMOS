@@ -92,7 +92,8 @@ a. Running the following command to start the *first stage* of training.
 ```
 python -m torch.distributed.launch --nproc_per_node=2 train_StreamMOS.py --config config/StreamMOS.py --tag base
 ```
-All training records will be stored in `experiments/StreamMOS/base`. Please note that by default, validation will be conducted in each epoch after 40 epoches.                    
+All training records will be stored in `experiments/StreamMOS/base`. Please note that by default, validation will be conducted in each epoch after 40 epoches.       
+
 b. Running the following command to start the *second stage* of training. At this stage, the network will learn to distinguish movable objects.
 ```
 python -m torch.distributed.launch --nproc_per_node=2 train_StreamMOS_seg.py --config config/StreamMOS_seg.py --tag base --checkpoint_path experiments/StreamMOS/base/checkpoint/{Num}-model.pth
