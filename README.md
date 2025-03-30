@@ -92,7 +92,7 @@ a. Running the following command to start the *first stage* of training.
 ```
 python -m torch.distributed.launch --nproc_per_node=2 train_StreamMOS.py --config config/StreamMOS.py --tag base
 ```
-All training records will be stored in `experiments/StreamMOS/base`. Please note that by default, validation will be conducted in each epoch after 40 epoches.       
+Training records are stored in `experiments/StreamMOS/base`. By default, validation will be conducted in each epoch after 40 epochs.       
 
 b. Running the following command to start the *second stage* of training. At this stage, the network will learn to distinguish movable objects.
 ```
@@ -111,7 +111,7 @@ b. Running the following command to begin evaluating the performance of the mode
 ```
 python -m torch.distributed.launch --nproc_per_node=1 val_StreamMOS_seg.py --config config/StreamMOS_seg.py --tag base --start_val_epoch {Num} --end_val_epoch {Num+1}
 ```
-The results are saved in `experiments/StreamMOS_seg/base/val_results`. 
+The results are saved in `experiments/StreamMOS_seg/base/val_results` and `experiments/StreamMOS_seg/base/val_bf_results`. 
 
 c. If you want to reproduce the results of the paper, we provide a pre-trained model on OneDrive. You need to place the folder named `StreamMOS_seg` in `experiments/`.
 ```
