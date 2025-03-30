@@ -111,7 +111,7 @@ b. Running the following command to begin evaluating the performance of the mode
 ```
 python -m torch.distributed.launch --nproc_per_node=1 val_StreamMOS_seg.py --config config/StreamMOS_seg.py --tag base --start_val_epoch {Num} --end_val_epoch {Num+1}
 ```
-The results are saved in `experiments/StreamMOS_seg/base/val_results` and `experiments/StreamMOS_seg/base/val_bf_results`. 
+The results are saved in `val_results` and `val_bf_results` in `experiments/StreamMOS_seg/base/`. 
 
 c. If you want to reproduce the results of the paper, we provide a pre-trained model on OneDrive. You need to place the folder named `StreamMOS_seg` in `experiments/`.
 ```
