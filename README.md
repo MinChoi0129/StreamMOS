@@ -119,6 +119,14 @@ python -m torch.distributed.launch --nproc_per_node=1 val_StreamMOS_seg.py --con
 ```
 
 ### 5. Post Processing
+We provide `voxel_voting.py` and `voxel_instance_voting.py` for conducting voxel voting and voxel+instance voting, respectively.
+```
+# Only voxel voting
+python voxel_voting.py --config config/StreamMOS_seg.py --tag base --modal val
+
+# Voxel voting + Instance voting
+python voxel_instance_voting.py --config config/StreamMOS_seg.py --tag base --modal val
+```
 
 ## Acknowledgement
 
