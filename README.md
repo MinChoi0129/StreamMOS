@@ -83,6 +83,10 @@ d. Install deep_point and deformattn libraries
 ```
 cd deep_point/
 python setup.py install
+
+# Please note that if "ImportError: cannot import name packaging from pkg.sources" appears, please perform this operation
+pip install --upgrade setuptools pip
+
 cd ../deformattn/
 python setup.py develop
 ```
