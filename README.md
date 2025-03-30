@@ -117,7 +117,7 @@ python -m torch.distributed.launch --nproc_per_node=1 val_StreamMOS_seg.py --con
 ```
 The results are saved in `val_results` and `val_bf_results` in `experiments/StreamMOS_seg/base/`. 
 
-c. If you want to reproduce the results of the paper, we provide a pre-trained model on OneDrive. You need to place the folder named `StreamMOS_seg` in `experiments/`.
+c. If you want to reproduce the results of the paper, we provide a pre-trained model on [OneDrive](https://1drv.ms/f/c/ce3e6ec833cb3fde/EthSVvxbuapItJyI0AruQhoBTkBeY1JtHb8W7QcDiSzJFQ?e=sQk89E). You need to place the folder named `StreamMOS_seg` in `experiments/`.
 ```
 python -m torch.distributed.launch --nproc_per_node=1 val_StreamMOS_seg.py --config config/StreamMOS_seg.py --tag base --start_val_epoch 10 --end_val_epoch 11
 ```
