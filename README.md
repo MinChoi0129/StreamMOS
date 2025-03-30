@@ -43,6 +43,8 @@ Download [SemanticKITTI](http://www.semantic-kitti.org/dataset.html#overview) da
         |       ├── 000001.label
         |       └── ...
         ├── 08 # for validation
+        ├── 11/ # 11-21 for testing
+        └── 21/
 ```
 Download the [object bank](https://drive.google.com/file/d/1QdSpkMLixvKQL6QPircbDI_0-GlGwsdj/view?usp=sharing) of SemanticKITTI to the folder `object_bank_semkitti`. The data structure is as follows:   
 ```
