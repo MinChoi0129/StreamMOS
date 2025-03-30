@@ -97,7 +97,7 @@ Running the following command to start the second stage of training. At this sta
 ```
 python -m torch.distributed.launch --nproc_per_node=2 train_StreamMOS_seg.py --config config/StreamMOS_seg.py --tag base --checkpoint_path experiments/StreamMOS/base/checkpoint/{Num}-model.pth
 ```
-`Num` represents the model number with the best performance.
+`Num` represents the model number with the best performance in the first stage.
 
 ### 4. Model Evaluation
 Running the following command to begin evaluating the performance of the model in the first stage.
