@@ -5,3 +5,4 @@ opencv-python
 tensorboardX
 pytz
 packaging
+numpy==1.22.0
