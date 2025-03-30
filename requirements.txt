@@ -1,0 +1,5 @@
+tqdm
+pyyaml
+scipy
+opencv-python
+tensorboardX
