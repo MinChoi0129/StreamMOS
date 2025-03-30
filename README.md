@@ -62,7 +62,7 @@ Download the [object bank](https://drive.google.com/file/d/1QdSpkMLixvKQL6QPircb
 
 
 ### 1. Environment Setup
-Our code is implemented on Python 3.8 with Pytorch 2.1.0 and CUDA 11.8. To reproduce and use our environment, you can use the following command:
+Our code is implemented on Python 3.8 with Pytorch 1.11.0 and CUDA 11.3. To reproduce and use our environment, you can use the following command:
 
 a. Clone the repository to local
 ```
@@ -76,7 +76,7 @@ conda activate stream
 ```                       
 c. Install common dependices and pytorch
 ```
-pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu118
+pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
 pip install -r requirements.txt
 ```
 
