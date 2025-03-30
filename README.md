@@ -79,6 +79,13 @@ c. Install common dependices and pytorch
 pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
 pip install -r requirements.txt
 ```
+d. Install deep_point and deformattn libraries
+```
+cd deep_point/
+python setup.py install
+cd ../deformattn/
+python setup.py develop
+```
 
 ### 3. Model Training
 Running the following command to start the first stage of training.
