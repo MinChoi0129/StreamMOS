@@ -105,6 +105,7 @@ class AttNet(nn.Module):
             point_feat_out (BS, C1, N, 1)
         '''
         BS, T, C, N, _ = point_feat.shape
+        print(point_feat.shape)
 
         pcds_cood_cur = pcds_coord[:, 0, :, :2].contiguous()
         pcds_sphere_coord_cur = pcds_sphere_coord[:, 0].contiguous()
@@ -115,6 +116,17 @@ class AttNet(nn.Module):
         bev_input = bev_input.view(BS, -1, self.bev_wl_shape[0], self.bev_wl_shape[1])
         bev_feat, point_feat_1, pred_res_cls_0, pred_res_cls_1, pred_res_cls_2, query_embed_store = self.bev_net(bev_input, pcds_cood_cur, pcds_sphere_coord_cur, query_embed_store, use_query_store, return_query)
         point_bev_feat = self.bev_grid2point(bev_feat, pcds_cood_cur)
+        """
+        point_feat_tmp : [12, 64, 160000, 1]
+        bev_input : [4, 192, 512, 512]
+        bev_feat : [4, 64, 256, 256]
+        point_feat_1 : [4, 64, 160000, 1]
+        pred_res_cls_0 : [4, 3, 256, 256]
+        pred_res_cls_1 : [4, 3, 256, 256]
+        pred_res_cls_2 : [4, 3, 256, 256]
+        query_embed_store : [4, 128, 64, 64]
+        point_bev_feat : [4, 64, 160000, 1]
+        """
 
         # merge multi-view
         point_feat_tmp_cur = point_feat_tmp.view(BS, T, -1, N, 1)[:, 0].contiguous()
