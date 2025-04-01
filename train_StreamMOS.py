@@ -181,7 +181,7 @@ def main(args, config):
     scheduler = builder.get_scheduler(optimizer, pOpt, per_epoch_num_iters)
 
     if rank == 0:
-        logger.info(model)
+        # logger.info(model)
         logger.info(optimizer)
         logger.info(scheduler)
 
@@ -205,7 +205,7 @@ if __name__ == '__main__':
     parser.add_argument('--config', help='config file path', type=str)
     parser.add_argument('--tag', help='config file path', type=str, default='base')
     parser.add_argument('--local_rank', type=int, default=0)
-    parser.add_argument('--start_val_epoch', type=int, default=40)
+    parser.add_argument('--start_val_epoch', type=int, default=1)
 
     args = parser.parse_args()
     config = importlib.import_module(args.config.replace('.py', '').replace('/', '.'))

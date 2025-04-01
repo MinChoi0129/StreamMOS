@@ -49,11 +49,11 @@ class MultiClassMetric:
         rec = self.tp / (self.gt_num + 1e-12)
         
         for i, cate in enumerate(self.Classes):
-            result_dic[cate + ' iou'] = iou[i]
-            result_dic[cate + ' pre'] = pre[i]
-            result_dic[cate + ' rec'] = rec[i]
+            result_dic[cate + '_iou'] = iou[i]
+            result_dic[cate + '_pre'] = pre[i]
+            result_dic[cate + '_rec'] = rec[i]
         
-        result_dic['mean iou'] = iou.mean()
+        result_dic['mean_iou'] = iou.mean()
         self.reset()
         return result_dic
 

@@ -1,0 +1,13 @@
+# unnecessary(cache, build, etc ...)
+__pycache__
+*.egg-info
+deep_point
+build
+*.so
+
+# Datasets
+object_bank_semkitti
+SemanticKITTI
+
+# Experiments
+experiments
